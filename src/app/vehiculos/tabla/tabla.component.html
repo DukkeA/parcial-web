@@ -1,0 +1,53 @@
+<!-- Component: Underline Table -->
+<div class="w-full overflow-x-auto">
+  <table
+    class="w-2/3 text-left border-collapse rounded w-overflow-x-auto mb-5"
+    cellspacing="0"
+  >
+    <tbody>
+      <tr class="border-b text-lg border-slate-300 bg-slate-800 text-slate-50 font-bold">
+        <th scope="col" class="h-12 px-6 stroke-slate-700">
+          #
+        </th>
+        <th scope="col" class="h-12 px-6 stroke-slate-700">
+          Marca
+        </th>
+        <th scope="col" class="h-12 px-6 stroke-slate-700">
+          Linea
+        </th>
+        <th scope="col" class="h-12 px-6 stroke-slate-700">
+          Modelo
+        </th>
+      </tr>
+      <tr
+        *ngFor="let vehiculo of vehiculos"
+        class="border-b border-slate-200 text-slate-800"
+      >
+        <td
+          class="h-12 px-6 transition duration-300 border-slate-200 stroke-slate-500 font-bold"
+        >
+          {{ vehiculo.id }}
+        </td>
+        <td
+          class="h-12 px-6 transition duration-300 border-slate-200 stroke-slate-500"
+        >
+          {{ vehiculo.marca }}
+        </td>
+        <td
+          class="h-12 px-6 transition duration-300 border-slate-200 stroke-slate-500"
+        >
+          {{ vehiculo.linea }}
+        </td>
+        <td
+          class="h-12 px-6 transition duration-300 border-slate-200 stroke-slate-500"
+        >
+          {{ vehiculo.modelo }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-lg" *ngFor="let marca of marcasCount | keyvalue">
+    <p>Total {{ marca.key }}: {{ marca.value }}</p>
+  </div>
+</div>
+<!-- End Underline Table -->
